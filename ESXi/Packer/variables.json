@@ -1,7 +1,7 @@
 {
-    "esxi_host": "",
-    "esxi_datastore": "",
+    "esxi_host": "192.168.1.10",
+    "esxi_datastore": "vm01_250gb_ssd",
     "esxi_username": "",
     "esxi_password": "",
-    "esxi_network_with_dhcp_and_internet": ""
+    "esxi_network_with_dhcp_and_internet": "VM Network"
 }
