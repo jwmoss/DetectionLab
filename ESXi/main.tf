@@ -4,6 +4,11 @@
 #
 #   Use of variables here to hide/move the variables to a separate file
 #
+
+terraform {
+  required_version = ">= 0.13"
+}
+
 provider "esxi" {
   esxi_hostname = var.esxi_hostname
   esxi_hostport = var.esxi_hostport
@@ -16,7 +21,7 @@ provider "esxi" {
 #########################################
 resource "esxi_guest" "logger" {
   guest_name = "logger"
-  disk_store = "datastore1"
+  disk_store = "vm01_250gb_ssd"
   guestos    = "ubuntu-64"
 
   boot_disk_type = "thin"
@@ -104,7 +109,7 @@ resource "esxi_guest" "dc" {
 
 resource "esxi_guest" "wef" {
   guest_name = "wef"
-  disk_store = "datastore2"
+  disk_store = "vm01_250gb_ssd"
   guestos    = "windows9srv-64"
 
   boot_disk_type = "thin"
@@ -139,7 +144,7 @@ resource "esxi_guest" "wef" {
 
 resource "esxi_guest" "win10" {
   guest_name = "win10"
-  disk_store = "datastore2"
+  disk_store = "vm01_250gb_ssd"
   guestos    = "windows9-64"
 
   boot_disk_type = "thin"
